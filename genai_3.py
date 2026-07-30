@@ -7,8 +7,17 @@ Original file is located at
     https://colab.research.google.com/drive/1J7_ikyTHwYH5V3CQwkEzYqqOx1IX6isd
 """
 
-# Install required libraries
-# pip install -q transformers torch accelerate
+# Install required libraries if not present
+import subprocess
+import sys
+
+try:
+    import transformers
+    import torch
+    import accelerate
+except ImportError:
+    print("Installing required libraries: transformers, torch, accelerate...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", "transformers", "torch", "accelerate"])
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch

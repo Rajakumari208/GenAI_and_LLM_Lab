@@ -7,8 +7,17 @@ Original file is located at
     https://colab.research.google.com/drive/1Wiv83ECVVRGCf53PibjeGO4gUsn7ZN4L
 """
 
-# Install required libraries
-# pip install -q transformers torch accelerate
+# Install required libraries if not present
+import subprocess
+import sys
+
+try:
+    import transformers
+    import torch
+    import accelerate
+except ImportError:
+    print("Installing required libraries: transformers, torch, accelerate...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "-q", "transformers", "torch", "accelerate"])
 
 from transformers import pipeline
 
