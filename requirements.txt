@@ -1,0 +1,15 @@
+transformers
+torch
+accelerate
+sentence-transformers
+faiss-cpu
+gTTS
+gradio
+evaluate
+rouge_score
+datasets
+scikit-learn
+pillow
+jupyter
+nbconvert
+ipykernel
